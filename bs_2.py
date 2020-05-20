@@ -10,9 +10,6 @@ def exemplo(msg2):
 from bs4 import BeautifulSoup
 def making_the_soup():
     titulo("Making the soup")
-    '''To parse a document, pass it into the BeautifulSoup constructor. 
-    You can pass in a string or an open filehandle:'''
-
     from bs4 import BeautifulSoup
 
     with open("index.html") as fp:
@@ -97,12 +94,19 @@ def navigate_1():
     print(type(tag.string))
 
 def navigate_2():
+    '''A NavigableString is just like a Python Unicode string, except that it also supports some of the features described in Navigating the tree and Searching the tree. You can convert a NavigableString to a Unicode string with unicode():'''
     soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
     tag = soup.b
     unicode_string = unicode(tag.string)
     print(unicode_string)
     print(type(unicode_string))
+def navigate_3():
+    soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
+    tag = soup.b
+    tag.string.replace_with("No longer bold")
+    print(tag)
 
+'''To parse a document, pass it into the BeautifulSoup constructor.  You can pass in a string or an open filehandle:'''    
 #making_the_soup()
 #atributos()
 #Multi_valued1()
@@ -112,5 +116,8 @@ def navigate_2():
 #Multi_valued5()
 #Multi_valued6() deu erro
 #Multi_valued7() deu erro    
-navigate_1()
-#navigate_2()
+#navigate_1()
+#navigate_2() deu erro
+'''You can’t edit a string in place, but you can replace one string with another, using replace_with():'''
+#navigate_3()  
+
