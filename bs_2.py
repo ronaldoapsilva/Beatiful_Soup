@@ -82,6 +82,26 @@ def Multi_valued6():
     xml_soup = BeautifulSoup('<p class="body strikeout"></p>', 'xml')
     xml_soup.p['class']
 
+def Multi_valued7():
+    '''Again, you can configure this using the multi_valued_attributes argument:'''
+    class_is_multi= { '*' : 'class'}
+    xml_soup = BeautifulSoup('<p class="body strikeout"></p>', 'xml', multi_valued_attributes=class_is_multi)
+    xml_soup.p['class']
+
+exemplo("NavigableString")
+def navigate_1():
+    '''A string corresponds to a bit of text within a tag. Beautiful Soup uses the NavigableString class to contain these bits of text:'''
+    soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
+    tag = soup.b
+    print(tag.string)
+    print(type(tag.string))
+
+def navigate_2():
+    soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
+    tag = soup.b
+    unicode_string = unicode(tag.string)
+    print(unicode_string)
+    print(type(unicode_string))
 
 #making_the_soup()
 #atributos()
@@ -91,3 +111,6 @@ def Multi_valued6():
 #Multi_valued4()
 #Multi_valued5()
 #Multi_valued6() deu erro
+#Multi_valued7() deu erro    
+navigate_1()
+#navigate_2()
