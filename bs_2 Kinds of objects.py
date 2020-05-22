@@ -8,14 +8,6 @@ def exemplo(msg2):
     print('{:=^50}'.format(msg2))            
 
 from bs4 import BeautifulSoup
-def making_the_soup():
-    titulo("Making the soup")
-    from bs4 import BeautifulSoup
-
-    with open("index.html") as fp:
-        soup = BeautifulSoup(fp, 'html.parser')
-
-    soup = BeautifulSoup("<html>data</html>", 'html.parser')
 
 def kinds_of_objects():
     titulo("Kinds of objects")
@@ -76,7 +68,7 @@ def Multi_valued5():
 def Multi_valued6():
     '''If you parse a document as XML, there are no multi-valued attributes:'''
 
-    xml_soup = BeautifulSoup('<p class="body strikeout"></p>', 'xml')
+    xml_soup = BeautifulSoup('<p class="body strikeout"></p>', 'lxml-xml')
     xml_soup.p['class']
 
 def Multi_valued7():
@@ -106,15 +98,14 @@ def navigate_3():
     tag.string.replace_with("No longer bold")
     print(tag)
 
-'''To parse a document, pass it into the BeautifulSoup constructor.  You can pass in a string or an open filehandle:'''    
-#making_the_soup()
+
 #atributos()
 #Multi_valued1()
 #Multi_valued2()
 #Multi_valued3()
 #Multi_valued4()
 #Multi_valued5()
-#Multi_valued6() deu erro
+#Multi_valued6() #deu erro
 #Multi_valued7() deu erro    
 #navigate_1()
 #navigate_2() deu erro

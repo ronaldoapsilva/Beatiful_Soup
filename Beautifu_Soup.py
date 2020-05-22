@@ -15,7 +15,7 @@ and they lived at the bottom of a well.</p>
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(html_doc, 'html.parser')
 
-#print(soup.prettify())
+print(soup.prettify())
 print(soup.title)
 print(soup.title.name)
 print(soup.title.string)
