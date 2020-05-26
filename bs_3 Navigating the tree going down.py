@@ -24,15 +24,15 @@ def Navigating_using_tag_names():
 
 def contents_children_1():
     head_tag = soup.head
-    print(head_tag)
-    print(head_tag.contents)
+    print(1, "\n", head_tag)
+    print(2, "\n", head_tag.contents)
     title_tag = head_tag.contents[0]
-    print(title_tag)
-    print(title_tag.contents)
+    print(3, "\n", title_tag)
+    print(4, "\n", title_tag.contents)
     text = title_tag.contents[0]
     #print(text.contents)
     for child in title_tag.children:
-        print(child)
+        print(5, "\n", child)
 
 def contents_children_2():
     print(len(soup.contents))
@@ -63,7 +63,7 @@ def strings_and_stripped_strings_2():
 #Navigating_using_tag_names()
 '''The simplest way to navigate the parse tree is to say the name of the tag you want. If you want the <head> tag, just say soup.head:'''
 #contents_children_1()
-#contents_children_2()
+contents_children_2()
 #descendants_1()
 
 #string_1()

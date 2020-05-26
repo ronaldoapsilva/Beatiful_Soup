@@ -8,6 +8,7 @@ def exemplo(msg2):
     print('{:=^50}'.format(msg2))            
 
 from bs4 import BeautifulSoup
+soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
 
 def kinds_of_objects():
     titulo("Kinds of objects")
@@ -16,8 +17,7 @@ def kinds_of_objects():
 
     TAG
     A Tag object corresponds to an XML or HTML tag in the original document:'''
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup('<b id="boldest">Extremely bold</b>', 'html.parser')
+
     tag = soup.b
     print(type(tag))
     print(tag.name)
@@ -27,6 +27,7 @@ def atributos():
     exemplo("Attributes")
     '''A tag may have any number of attributes. The tag <b id="boldest"> has an attribute “id” whose value is “boldest”. 
     You can access a tag’s attributes by treating the tag like a dictionary:'''
+    tag = soup.b
     print(tag['id'])
     '''You can access that dictionary directly as .attrs:'''
     print(tag.attrs)
@@ -98,12 +99,12 @@ def navigate_3():
     tag.string.replace_with("No longer bold")
     print(tag)
 
-
+#kinds_of_objects()
 #atributos()
 #Multi_valued1()
 #Multi_valued2()
 #Multi_valued3()
-#Multi_valued4()
+Multi_valued4()
 #Multi_valued5()
 #Multi_valued6() #deu erro
 #Multi_valued7() deu erro    

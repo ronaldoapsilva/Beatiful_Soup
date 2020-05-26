@@ -91,7 +91,7 @@ def recursiveargument():
 findall()
 #https://beautiful-soup-4.readthedocs.io/en/latest/#find-all
 
-argumento()
+#argumento()
 #https://beautiful-soup-4.readthedocs.io/en/latest/#the-name-argument
 
 #keywordarg_1()
@@ -110,5 +110,5 @@ argumento()
 #limitargument()
 #https://beautiful-soup-4.readthedocs.io/en/latest/#the-limit-argument
 
-#recursiveargument()
+recursiveargument()
 #https://beautiful-soup-4.readthedocs.io/en/latest/#the-recursive-argument
