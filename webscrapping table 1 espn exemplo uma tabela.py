@@ -21,6 +21,12 @@ response = requests.get(url, headers = headers)
 Option 3 
 headers= {'User-Agent': 'Chrome 83 on Windows 10'}
 response = requests.get(url, headers = headers)
+
+Optpion 4 error 401
+session = requests.session()
+response = session.get(url, headers = {'User-Agent': 'Mozilla/5.0'})
+
+
 '''
 
 #print(response.status_code)
