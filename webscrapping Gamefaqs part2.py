@@ -4,6 +4,13 @@ html_doc = "C:\\Users\RONALDOAPARECIDODASI\Documents\MeusProjetos\Treinamento-Py
 soup = BeautifulSoup(open(html_doc), 'html.parser')
 
 a = soup.find_all('div')
+'''[<div style="background-color:black;color:white;padding:20px;">
+<h2>New York</h2>
+<p> New York is the home of various cultures and ethnicities.</p>
+</div>, <div style="background-color:black;color:white;padding:20px;">
+<h2>London</h2>
+<p> London is the home of various cultures and ethnicities.</p>
+</div>]'''
 #find parents
 b = soup.find('div')
 c = soup.find(string = 'New York').find_parent()
@@ -21,4 +28,4 @@ l = soup.find(string = 'New York').find_all_next()
 m = soup.find(string = 'London').find_all_next()
 n = soup.find(string = 'New York').find_previous()  #same as parent
 o = soup.find(string = 'New York').find_all_previous() #same as all parents
-print(o)
+print(a)

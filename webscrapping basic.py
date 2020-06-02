@@ -7,21 +7,15 @@ url = "https://www.marketwatch.com/"
 response = requests.get(url)
 soup = BeautifulSoup(response.content, 'html.parser')
 soup.find_all('div', class_ = "element element--latestNews")
-#print(len(soup.find_all('div', class_ = "element element--latestNews"))) #sempre usar len para sabe quantos elementos/tag tem, neste caso o elemento/tag é div, para sabe quantidade div com o mesmo nome, vemos qual é o atributo, neste caso é uma class, se fosse um atributo id, não precisa de sabe quantas div, pois id são unicos, com class nome "element element--latestNews" temos apenas len = 1
-#print(soup.find_all('div', class_ = "element element--latestNews"))
-
-
-def linkes():
-    print(soup.find('a').get('href'))
+a = len(soup.find_all('div', class_ = "element element--latestNews")) 
+#sempre usar len para sabe quantos elementos/tag tem, neste caso o elemento/tag é div, para sabe quantidade div com o mesmo nome, vemos qual é o atributo, neste caso é uma class, se fosse um atributo id, não precisa de sabe quantas div, pois id são unicos, com class nome "element element--latestNews" temos apenas len = 1
+b = soup.find_all('div', class_ = "element element--latestNews")
+c = soup.find('a').get('href')
 #HTML links are defined with the <a> tag. The link address is specified in the href attribute: no caso acima extrai apenas um link, para extrair todo usar um loop
 #linkes()
-
-def listas():
-    print(soup.find_all('ul'))
-    print(5*'\n')
-    print(len(soup.find_all('ul')))
-    print(5*'\n')
-    print(soup.find_all('ul')[0])
+e = soup.find_all('ul')
+f = len(soup.find_all('ul'))
+g = soup.find_all('ul')[0]
     print(5*'\n')
     print(soup.find_all('ul', class_ ="list list--menu j-list"))
     print(len(soup.find_all('ul', class_ ="list list--menu j-list")))

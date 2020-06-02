@@ -33,16 +33,14 @@ response = session.get(url, headers = {'User-Agent': 'Mozilla/5.0'})
 #print(response.content)
 soup = BeautifulSoup(response.content, "html.parser")
 stat_table = soup.find_all('table', class_ = 'Table Table--align-right Table--fixed Table--fixed-left')
-
+print(len(stat_table))
 stat_table = stat_table[0]
-
-
 
 def test1():
     for row in stat_table.find_all('tr'):
         for cell in row.find_all('td'):
             print(cell.text)
-test1()
+#test1()
 #imprimir resultado
 def test2():
     caminho = Path(r"C:\Users\RONALDOAPARECIDODASI\Documents\MeusProjetos\Treinamento-Python\Beatiful_Soup\basketball_stats.txt")
@@ -69,6 +67,12 @@ def test4():
                 r.write(cell.text.ljust(22))
             r.write('\n')
 #test4()        
+def test5():
+    for row in stat_table.find_all('tr'):
+        for cell in row.find_all('td'):
+            print(cell.text.ljust(22))
+        print('\n')
+test5()  
 #cria o txt, copia cell.txt para o arquivo e pula uma linha cada interacao, e ajusta os dados de td para 22, completando com o espaco
 '''
 ljust exemploe
