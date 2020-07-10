@@ -12,6 +12,7 @@ driver = webdriver.Firefox()
 driver.implicitly_wait(3)
 driver.get(url)
 
+#not required because of silenium 
 #response = requests.get(url)
 
 last = None
@@ -20,7 +21,7 @@ while not last:
         last = driver.find_element_by_xpath(
             "//table[@class='Table Table--align-right Table--fixed Table--fixed-left']/tbody/tr[271]/td").text
         # print(last)
-    except NoSuchElementException:
+    except NoSuchElementException: #precisa importar este erro
         time.sleep(2)
         continue_link = driver.find_element_by_link_text(
             'Show More')  # print(continue_link.text)
